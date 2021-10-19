@@ -30,9 +30,9 @@ function Forecast()
       weatherDataStore.addChangeListener_WeatherData5(onChangeWeatherData5)
       weatherDataStore.addChangeListener_WeatherDataForecast(onChangeForecast)
     },[])
-    if(!token) {
+   /* if(!token) {
       return <Login setToken={setToken} />
-    }
+    }*/
 
     const Horsens = 'Horsens'
     const Aarhus = 'Aarhus'
@@ -47,6 +47,7 @@ function Forecast()
     function onChangeWeatherData()
     {
       setweatherDatas(weatherDataStore.callForCurrentData())
+    
     }
   
     function onChangeWeatherData2()

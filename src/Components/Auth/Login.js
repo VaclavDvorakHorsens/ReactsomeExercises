@@ -12,6 +12,7 @@ export default function Login({ setToken }) {
           username,
           password
         });
+        //if(token.token==='test123')
         setToken(token);
       }
 

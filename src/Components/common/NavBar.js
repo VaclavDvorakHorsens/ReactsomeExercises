@@ -12,12 +12,10 @@ function NavBar() {
                 <li> <NavLink exact /*activeStyle={activeStyle}*/ to="/">
                     Home 
                 </NavLink></li>
-                <li><NavLink exact /*activeStyle={activeStyle}*/ to="/Forecast">
+                <li><NavLink exact /*activeStyle={activeStyle}*/ to="/forecast">
                     ForecastData
                 </NavLink>       </li>
-                <li><NavLink exact /*activeStyle={activeStyle}*/ to="/Login">
-                    Login
-                </NavLink></li>
+             
             </ul>
         </nav>
     );
