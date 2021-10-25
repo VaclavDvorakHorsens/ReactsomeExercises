@@ -1,25 +1,9 @@
-import dispatcher from './../Dispatcher'
-import actionTypes from './actionTypes'
 
 
-export async function callForCurrentData(e) {
+async function callForCurrentData(e) {
     let data = await makeTheCall(e.target.value)
-    dispatcher.dispatch(
-        {
-            actionTypes: actionTypes.GET_ALL_DATA,
-            weatherData: data
-        })
+    return data;
 }
-
-/*export async function callForCurrentData2(e) {
-    let data = await makeTheCall(e.target.value)
-    dispatcher.dispatch(
-        {
-            actionTypes: actionTypes.GET_ALL_MIN,
-            weatherData: data
-        })
-}*/
-
 
 //call for data on server
 async function makeTheCall(city) {
@@ -37,11 +21,6 @@ function mainCallback(dataPast, dataForecast, city) {
     let dataPast5 = callback_Past5(dataPast, city)
     let dataForecast6 = callback_Forecast(dataForecast, city)
     return [dataPast0, dataPast2, dataPast3, dataPast4, dataPast5,dataForecast6]
-    //return callback_1(data,city)
-    /*callback_2(data)
-    callback_3(data)
-    callback_4(data)
-    callback_5(data)*/
 }
 
 //show all latest in last 5days data
@@ -96,4 +75,28 @@ function callback_Forecast(data, city) {
     const arrayToDisplay = data.filter(d => oneDayInFuture >
         Date.parse(d.time) && d.place === city)
     return arrayToDisplay
+}
+
+
+async function postNewData(data) {
+    let res = await makeTheCallPost(data)
+    return res;
+}
+
+//call for data on server
+async function makeTheCallPost(data) {
+    fetch('http://localhost:8080/data',
+    {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify(data)
+    })
+    .then(function(res){ 
+        console.log(res)
+        return res
+    })
+    .catch(function(res){ console.log(res) })
 }

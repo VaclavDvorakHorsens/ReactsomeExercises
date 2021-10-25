@@ -1,8 +1,8 @@
 import { v4 as uuid } from 'uuid';
-import './WeatherDataUnit.css';
+import './WeatherDataAll_5DaysBackUnit.css';
 //import WeatherDataUni2 from './WeatherDataUnit.js';
 
-const WeatherData2 = ({ weatherDatas2 }) => {
+const WeatherData_5DaysBackAverageMin = ({ weatherDatas2 }) => {
 
     return (
         <div className='borderTypePast'>
@@ -13,4 +13,4 @@ const WeatherData2 = ({ weatherDatas2 }) => {
 }
 
 
-export default WeatherData2
+export default WeatherData_5DaysBackAverageMin

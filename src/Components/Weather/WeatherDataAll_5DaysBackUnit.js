@@ -1,6 +1,6 @@
-import './WeatherDataUnit.css';
+import './WeatherDataAll_5DaysBackUnit.css';
 
-const WeatherDataUnit = ({ weatherData }) => {
+const WeatherDataAll_5DaysBackUnit = ({ weatherData }) => {
 
     return (
         <div className='borderTypePast'>
@@ -13,4 +13,4 @@ const WeatherDataUnit = ({ weatherData }) => {
 }
 
 
-export default WeatherDataUnit
+export default WeatherDataAll_5DaysBackUnit
