@@ -26,7 +26,7 @@ function mainCallback(dataPast, dataForecast, city) {
 //show all latest in last 5days data
 function callback_Past0(data, city) {
     var yeasterday = new Date()
-    yeasterday.setDate(yeasterday.getDate() - 5)
+    yeasterday.setDate(yeasterday.getDate() - 6)
     const arrayToDisplay = data.filter(d => yeasterday <
         Date.parse(d.time) && d.place === city)
     return arrayToDisplay
@@ -53,7 +53,7 @@ function callback_Past3(data, city) {
 //total value of precipation
 function callback_Past4(data, city) {
     var fiveDaysBack = new Date()
-    fiveDaysBack.setDate(fiveDaysBack.getDate() - 5)
+    fiveDaysBack.setDate(fiveDaysBack.getDate() - 6)
     const arrayToDisplay = data.filter(d => fiveDaysBack <
         Date.parse(d.time) && d.type === 'precipitation' && d.place === city).map(m => m.value).reduce((s, n) => s + n)
     return arrayToDisplay
@@ -78,7 +78,7 @@ function callback_Forecast(data, city) {
 }
 
 
-async function postNewData(data) {
+ async function postNewData(data) {
     let res = await makeTheCallPost(data)
     return res;
 }
@@ -95,8 +95,11 @@ async function makeTheCallPost(data) {
         body: JSON.stringify(data)
     })
     .then(function(res){ 
+        debugger
         console.log(res)
         return res
     })
     .catch(function(res){ console.log(res) })
 }
+
+export { callForCurrentData, postNewData };

@@ -35,6 +35,7 @@ export default function Login({ setToken }) {
 
 
   async function loginUser(credentials) {
+    debugger
     return fetch('http://localhost:3001/Login', {
       method: 'POST',
       headers: {

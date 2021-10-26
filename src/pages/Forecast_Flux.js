@@ -7,7 +7,7 @@ import WeatherData_TotalPrecipitation from '../Components/Weather/WeatherData_To
 import WeatherData_5DaysBackAverageSpeed from '../Components/Weather/WeatherData_5DaysBackAverageSpeed'
 import WeatherDataForecast from '../Components/Weather/WeatherDataForecast'
 import weatherDataStore from '../Store/WeatherDataStore'
-import { callForCurrentData } from '../Actions/getDataActions'
+import { callForCurrentData } from '../Actions/getDataActions.mjs'
 import dispatcher from '../Dispatcher/Dispatcher'
 import actionTypes from '../Actions/actionTypes'
 

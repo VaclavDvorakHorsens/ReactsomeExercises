@@ -1,12 +1,17 @@
 import './WeatherDataAll_5DaysBackUnit.css';
 
 const WeatherDataAll_5DaysBackUnit_TwoWayBinding = ({ key,weatherData,handleChange }) => {
-
+    const color='red'
     return (
+        
         <div className='borderTypePast'>
-            <input type='text' value={weatherData.value} onChange={handleChange(key)} />   <p> Type:{weatherData.type},   Unit:{weatherData.unit},   Place: {weatherData.place}, DateTime: {weatherData.time},  PrecipitationType: {weatherData.precipitation_type}
-            </p>
-           
+            Value:<input type='text' value={weatherData.value} style={{color: color}} /*onChange={handleChange(key)}*/ />   
+            Type:<input type='text' value={weatherData.type} style={{color: color}}/*onChange={handleChange(key)}*/ />   
+            Unit:<input type='text' value={weatherData.unit} style={{color: color}}/> 
+            Place:<input type='text' value={weatherData.place} style={{color: color}}/> 
+            PrecipitationType:<input type='text' value={weatherData.precipitation_type} style={{color: color}}/>
+            
+         
         </div >
     )
 
